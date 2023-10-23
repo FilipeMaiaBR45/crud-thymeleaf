@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="https//www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base}">
+<head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+</head>
+<body>
+<section layout:fragment="content">
+
+    <div class="card m-5 shadow mb-5">
+        <div class="card-body">
+            <form  th:action="@{/products/add}" method="post">
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="name">Nome do Produto</label>
+                    <input class="form-control" type="text" id="name" name="name" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="price">Preço</label>
+                    <input class="form-control"  type="number" id="price" name="price" step="0.01" required>
+                </div>
+
+
+                <button class="btn btn-success" type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>
